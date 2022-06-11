@@ -3,16 +3,6 @@ body {
     margin: 0px;
 }
 
-form{
-    margin: 0 auto;
-    margin-top: 100px;
-    max-width: 700px;
-
-}
-
-/* .form-group{
-} */
-
 @media (min-width:600px) {
 
     #container {
