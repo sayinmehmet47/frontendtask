@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function HistoryComponent() {
   const { data } = useSelector((state) => state.history);
-
+  console.log(data);
   return (
     <div className="d-flex flex-column justify-content-center text-center">
       <Table striped bordered hover>
@@ -17,7 +17,7 @@ export default function HistoryComponent() {
           </tr>
         </thead>
         {data.map((item, index) => (
-          <tbody>
+          <tbody id={index}>
             <tr>
               <td>{item.value}</td>
               <td>
