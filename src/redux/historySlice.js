@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-//tarih yazmayalim
+//tarihin amk
 export const HistoryData = createSlice({
   name: 'history',
   initialState: {
