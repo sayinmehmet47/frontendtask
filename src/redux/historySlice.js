@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
+//deneme
 export const HistoryData = createSlice({
   name: 'history',
   initialState: {
