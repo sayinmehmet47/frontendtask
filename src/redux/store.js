@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import historySlice from './historySlice';
 //ekleme
-//eklememaster
+//eklemefeature
 export const store = configureStore({
   reducer: {
     history: historySlice,
