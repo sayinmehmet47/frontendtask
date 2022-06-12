@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+<<<<<<< HEAD
 //tarihin amk
 //son denemeler
 //alla alla
+=======
+
+>>>>>>> master
 export const HistoryData = createSlice({
   name: 'history',
   initialState: {
