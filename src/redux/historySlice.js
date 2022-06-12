@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-//merge denemesi
+
 export const HistoryData = createSlice({
   name: 'history',
   initialState: {
