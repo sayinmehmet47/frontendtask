@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-//history edit
+
 
 export const HistoryData = createSlice({
   name: 'history',
