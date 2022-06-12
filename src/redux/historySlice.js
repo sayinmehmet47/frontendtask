@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-//ekleme
 export const HistoryData = createSlice({
   name: 'history',
   initialState: {
