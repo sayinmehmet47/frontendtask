@@ -1,86 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Configuration, V0alpha2Api } from '@ory/kratos-client';
-import { edgeConfig } from '@ory/integrations/next';
-import { AxiosError } from 'axios';
 
 import GridsHistory from '../gridsHistory';
 import { addLocalStorage } from '../redux/historySlice';
 
-const kratos = new V0alpha2Api(new Configuration(edgeConfig));
-
-const SignedOut = () => (
-  <>
-    Get started and{' '}
-    <a href={'/api/.ory/self-service/registration/browser'}>
-      create an example account
-    </a>{' '}
-    or <a href={'/api/.ory/self-service/login/browser'}>sign in</a>,{' '}
-    <a href={'/api/.ory/self-service/recovery/browser'}>recover your account</a>{' '}
-    or{' '}
-    <a href={'/api/.ory/self-service/verification/browser'}>
-      verify your email address
-    </a>
-    ! All using open source{' '}
-    <a href={'https://github.com/ory/kratos'}>Ory Kratos</a> in minutes with
-    just a{' '}
-    <a
-      href={
-        'https://www.ory.sh/login-spa-react-nextjs-authentication-example-api-open-source/'
-      }
-    >
-      few lines of code
-    </a>
-    !
-  </>
-);
-
 function Home() {
-  // Contains the current session or undefined.
-  const [session, setSession] = useState();
-
-  // The URL we can use to log out.
-  const [logoutUrl, setLogoutUrl] = useState();
-
-  // The error message or undefined.
-  const [error, setError] = useState();
-
   const dispatch = useDispatch();
   const handleClick = (e, value) => {
     e.preventDefault();
     dispatch(addLocalStorage(GridsHistory(value)));
   };
-
-  useEffect(() => {
-    // If the session or error have been loaded, do nothing.
-    if (session || error) {
-      return;
-    }
-
-    // Try to load the session.
-    kratos
-      .toSession()
-      .then(({ data: session }) => {
-        // Session loaded successfully! Let's set it.
-        setSession(session);
-
-        // Since we have a session, we can also get the logout URL.
-        return kratos
-          .createSelfServiceLogoutFlowUrlForBrowsers()
-          .then(({ data }) => {
-            setLogoutUrl(data.logout_url);
-          });
-      })
-      .catch((err) => {
-        // An error occurred while loading the session or fetching
-        // the logout URL. Let's show that!
-        setError({
-          error: err.toString(),
-          data: err.response?.data,
-        });
-      });
-  }, [session, error]);
 
   return (
     <div className="d-flex justify-content-between flex-column align-items-center ">
