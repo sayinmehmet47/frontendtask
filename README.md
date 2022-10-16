@@ -10,6 +10,4 @@
 - [x] Bootstrap
 - [x] React-Router-Dom
 - [x] LocalStorage
-- [x] Ogrenmek
-
-
+- [x] Kosmak
