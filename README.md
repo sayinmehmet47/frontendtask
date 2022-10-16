@@ -10,6 +10,6 @@
 - [x] Bootstrap
 - [x] React-Router-Dom
 - [x] LocalStorage
-- [x] Calisma
+- [x] Ogrenmek
 
 
