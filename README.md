@@ -1,6 +1,6 @@
 # Button History App
 
-- This App displays a telephone keypad and the history of keys
+- This App displays a telephone keypad and the history of keys.
   clicked, including timestamps.
 
 # Technologies Used
